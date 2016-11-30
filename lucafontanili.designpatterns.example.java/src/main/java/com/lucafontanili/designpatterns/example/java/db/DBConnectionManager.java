@@ -68,8 +68,7 @@ public class DBConnectionManager {
 		Configuration configuration = new Configuration().addClass(Employee.class)
 				.setProperty("hibernate.dialect", "org.hibernate.dialect.SQLServerDialect")
 				.setProperty("hibernate.connection.driver_class", "com.mysql.jdbc.Driver")
-				.setProperty("hibernate.connection.url",
-						"jdbc:mysql://localhost/hibernate?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC")
+				.setProperty("hibernate.connection.url", System.getProperty(DBConstants.DB_URL))
 				.setProperty("hibernate.connection.username", System.getProperty(DBConstants.DB_USERNAME))
 				.setProperty("hibernate.connection.password", System.getProperty(DBConstants.DB_PASSWORD))
 				.setProperty("hibernate.connection.pool_size", "1").setProperty("hibernate.show_sql", "true")
